@@ -12,7 +12,7 @@ class Logger:
         now = now.strftime("%H:%M:%S")
 
         log = f"[bold green][{now}][/] [bold yellow][ManzanaCore][/] [deep_sky_blue1]INFO:[/] [bold bright_white]{log}[/]"
-        self.__console.print(log)
+        #self.__console.print(log)
 
         if exit == 1:
             sys.exit()
@@ -32,7 +32,7 @@ class Logger:
         now = now.strftime("%H:%M:%S")
 
         log = f"[bold green][{now}][/] [bold yellow][ManzanaCore][/] [bold red]WARNING:[/] [bold bright_white]{log}[/]"
-        self.__console.print(log)
+        #self.__console.print(log)
 
         if exit == 1:
             sys.exit()

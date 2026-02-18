@@ -60,11 +60,19 @@ def main():
         help="Apple Music URL for an album or a song",
         type=str
     )
+
+    parser.add_argument(
+        'cookie',
+        help="Apple Music cookie The media-user-token",
+        type=str,
+        nargs='?',  # 参数可选
+        default=None  # 如果没有提供 cookie 参数，默认为 None
+    )
     args = parser.parse_args()
     
     arguments(args)
 
 if __name__ == "__main__":
     os.system('cls' if os.name == 'nt' else 'clear')
-    console.print(LOGO)
+    #console.print(LOGO)
     main()

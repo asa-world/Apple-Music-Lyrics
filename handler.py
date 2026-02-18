@@ -76,4 +76,4 @@ def arguments(args):
                         else: logger.warning(f'No lyrics for "{__file}"')
                     else: logger.warning(f'No lyrics for "{__file}"')
 
-    #logger.info("Done.")
+    logger.info("Done.")
