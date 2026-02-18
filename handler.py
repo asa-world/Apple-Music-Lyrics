@@ -46,7 +46,10 @@ def arguments(args):
                 else:
                     if "timeSyncedLyrics" in track:
                         if track.get("timeSyncedLyrics"):
-                            logger.info(f'Saving "{__file}.lrc"...')
+                            if args.print:
+                                lyrics = '\n'.join(track.get("timeSyncedLyrics"))
+                                print(lyrics)  # 直接输出到命令行
+                            #logger.info(f'Saving "{__file}.lrc"...')
                             with open(path, "w", encoding="utf-8") as l:
                                 l.write(
                                     '\n'.join(
@@ -73,4 +76,4 @@ def arguments(args):
                         else: logger.warning(f'No lyrics for "{__file}"')
                     else: logger.warning(f'No lyrics for "{__file}"')
 
-    logger.info("Done.")
+    #logger.info("Done.")

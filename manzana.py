@@ -51,6 +51,11 @@ def main():
         action="store_true"
     )
     parser.add_argument(
+        '--print',
+        help="print time-synced lyrics",
+        action="store_true"
+    )
+    parser.add_argument(
         'url',
         help="Apple Music URL for an album or a song",
         type=str
