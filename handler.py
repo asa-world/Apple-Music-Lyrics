@@ -33,7 +33,7 @@ def arguments(args):
         applemusic = AppleMusic(CACHE, CONFIG, args.cookie, syncMsPointCount)
         data = applemusic.getInfo(args.url)
 
-        __dir = os.path.join(DOWNLOADS, data.get("dir", ""))
+        __dir = data.get("dir")
         if not os.path.exists(__dir):
             os.makedirs(__sanitize(__dir))
 
@@ -41,9 +41,7 @@ def arguments(args):
             __file = track.get("file")
 
             if not args.no_lrc:
-                path = os.path.join(__sanitize(__dir), f"{__sanitize(__file)}.lrc")
-                print(f"Sanitized path: {__sanitize(__dir)}")
-
+                path = os.path.join(DOWNLOADS, __sanitize(__dir), f"{__sanitize(__file)}.lrc")
                 if os.path.exists(path):
                     #logger.warning(f'"{__file}.lrc" is already exists!')
                     with open(path, "r", encoding="utf-8") as file:
@@ -66,7 +64,7 @@ def arguments(args):
                     else: logger.warning(f'No time-synced lyrics for "{__file}"')
 
             if not args.no_txt:
-                path = os.path.join(__sanitize(__dir), f"{__sanitize(__file)}.txt")
+                path = os.path.join(DOWNLOADS, __sanitize(__dir), f"{__sanitize(__file)}.txt")
                 if os.path.exists(path):
                     logger.warning(f'"{__file}.txt" is already exists!')
                 else:
