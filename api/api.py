@@ -24,12 +24,12 @@ HEADERS = {
 }
 
 class AppleMusic(object):
-    def __init__(self, cache: str, config: str, sync: int):
+    def __init__(self, cache: str, config: str, cookie: str, sync: int):
         self.__session = requests.Session()
         self.__session.headers = HEADERS
 
         self.__cache = Cache(cache)
-        self.__config = Configure(config)
+        self.__config = Configure(config, cookie)
 
         self.sync = sync
 

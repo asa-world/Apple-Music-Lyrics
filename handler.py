@@ -29,7 +29,7 @@ def arguments(args):
         syncMsPointCount = 2
         if args.sync: syncMsPointCount = 3
 
-        applemusic = AppleMusic(CACHE, CONFIG, syncMsPointCount)
+        applemusic = AppleMusic(CACHE, CONFIG, args.cookie, syncMsPointCount)
         data = applemusic.getInfo(args.url)
 
         __dir = data.get("dir")
