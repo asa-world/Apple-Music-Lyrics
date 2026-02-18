@@ -6,7 +6,7 @@ class Configure(object):
     def __init__(self, config: str, cookie: str = None):
         if not os.path.exists(config):
             os.makedirs(config)
-        
+        self.cookie = cookie
         self.__config = os.path.join(config, "config.bin")
 
         # 如果配置文件不存在，初始化配置
