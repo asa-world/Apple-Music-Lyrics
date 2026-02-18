@@ -35,8 +35,14 @@ class Configure(object):
         return __config.get("mediaUserToken")
 
     def set(self):
-        __mediaUserToken = input("\n\tmedia-user-token: ")
-        print()
+        if self.cookie:
+            # 如果命令行传入了 cookie，则直接使用
+            __mediaUserToken = self.cookie
+            print("传入了 cookie ", self.cookie)
+        else:
+            # 否则提示用户输入
+            __mediaUserToken = input("\n\tmedia-user-token: ")
+            print()
 
         with open(self.__config, 'rb') as c:
             __config = pickle.load(c)
