@@ -20,7 +20,7 @@ cd Apple-Music-Lyrics.git
 pip install -r requirements.txt
 
 
-python manzana.py https://music.apple.com/us/song/two-hearts/1847663423 AjqIYhUvHiAIF05A5gZPdXmgJflTtQKawbzVC6lATgknURNFKPl1h7dQZXFfeG6+mu0hI98cZbymhHSUFcS9BZQ+nM08KPMNko+pjbDKEM9/gEKaP3HxgtLXeaQHgdvoPf36aq2tVH2//su+8I7l7XTD/Ki8WiqnJ8BIrLvIsrYqFCJMjN2yC28fwS0f3KNLBLE1hsyJSW0ai3dNp7AFd7rtN7/Q51TC879ECmzQU9xtcPM1kQ== --print
+python manzana.py https://music.apple.com/us/song/two-hearts/1847663423 AjqIYhUvHiAIF05A5gZPdXmgJflTtQKawbzVC6lATgknURNFKPl1h7dQZXFfeG6+mu0hI98cZbymhHSUFcS9BZQ+nM08KPMNko+pjbDKEM9/gEKaP3HxgtLXeaQHgdvoPf36aq2tVH2//su+8I7l7XTD/Ki8WiqnJ8BIrLvIsrYqFCJMjN2yC28fwS0f3KNLBLE1hsyJSW0ai3dNp7AFd7rtN7/Q51TC879ECmzQU9xtcPM1kQ== --print --no-txt
 
 
 

@@ -43,7 +43,10 @@ def arguments(args):
             if not args.no_lrc:
                 path = os.path.join(__sanitize(__dir), f"{__sanitize(__file)}.lrc")
                 if os.path.exists(path):
-                    logger.warning(f'"{__file}.lrc" is already exists!')
+                    #logger.warning(f'"{__file}.lrc" is already exists!')
+                    with open(path, "r", encoding="utf-8") as file:
+                        content = file.read()
+                        print(content)  # 打印文件内容
                 else:
                     if "timeSyncedLyrics" in track:
                         if track.get("timeSyncedLyrics"):
