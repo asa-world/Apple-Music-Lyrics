@@ -14,7 +14,7 @@ def __get_path():
 
 CACHE = os.path.join(__get_path(), "cache")
 CONFIG = os.path.join(__get_path(), "config")
-DOWNLOADS = os.path.join(__get_path(), "downloads")
+#DOWNLOADS = os.path.join(__get_path(), "downloads")
 
 def __sanitize(path):
     if path != "":
@@ -41,7 +41,7 @@ def arguments(args):
             __file = track.get("file")
 
             if not args.no_lrc:
-                path = os.path.join(DOWNLOADS, __sanitize(__dir), f"{__sanitize(__file)}.lrc")
+                path = os.path.join("downloads", __sanitize(__dir), f"{__sanitize(__file)}.lrc")
                 if os.path.exists(path):
                     #logger.warning(f'"{__file}.lrc" is already exists!')
                     with open(path, "r", encoding="utf-8") as file:
@@ -64,9 +64,9 @@ def arguments(args):
                     else: logger.warning(f'No time-synced lyrics for "{__file}"')
 
             if not args.no_txt:
-                path = os.path.join(DOWNLOADS, __sanitize(__dir), f"{__sanitize(__file)}.txt")
+                path = os.path.join("downloads", __sanitize(__dir), f"{__sanitize(__file)}.txt")
                 if os.path.exists(path):
-                    logger.warning(f'"{__file}.txt" is already exists!')
+                    logger.info(f'"{__file}.txt" is already exists!')
                 else:
                     if "lyrics" in track:
                         if track.get("lyrics"):
