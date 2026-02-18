@@ -42,6 +42,8 @@ def arguments(args):
 
             if not args.no_lrc:
                 path = os.path.join(__sanitize(__dir), f"{__sanitize(__file)}.lrc")
+                print(f"Sanitized path: {__sanitize(__dir)}")
+
                 if os.path.exists(path):
                     #logger.warning(f'"{__file}.lrc" is already exists!')
                     with open(path, "r", encoding="utf-8") as file:
