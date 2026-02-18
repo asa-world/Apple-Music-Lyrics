@@ -131,13 +131,13 @@ class AppleMusic(object):
                     }
                 )
             else:
-                logger.error("Invalid media-user-token! Re-enter the token...")
+                logger.error("token失效，请重新获取")
                 self.__config.delete()
                 self.__config.set()
                 self.__mediaUserToken(fromLoop=True)
         else:
             if not fromLoop:
-                logger.error("Enter your media-user-token to continue!")
+                #logger.error("Enter your media-user-token to continue!")
                 self.__config.set()
             logger.info("Re-start the program...", 1)
 

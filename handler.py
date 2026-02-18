@@ -14,6 +14,7 @@ def __get_path():
 
 CACHE = os.path.join(__get_path(), "cache")
 CONFIG = os.path.join(__get_path(), "config")
+DOWNLOADS = os.path.join(__get_path(), "downloads")
 
 def __sanitize(path):
     if path != "":
@@ -32,7 +33,7 @@ def arguments(args):
         applemusic = AppleMusic(CACHE, CONFIG, args.cookie, syncMsPointCount)
         data = applemusic.getInfo(args.url)
 
-        __dir = data.get("dir")
+        __dir = os.path.join(DOWNLOADS, data.get("dir", ""))
         if not os.path.exists(__dir):
             os.makedirs(__sanitize(__dir))
 
